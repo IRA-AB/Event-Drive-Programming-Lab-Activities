@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="libraries/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>My Posts</h1>
+
+        <button class="btn btn-primary" onclick="getPosts()">
+            Get Posts
+        </button>
+
+        <button class="btn btn-success" onclick="addPost()">
+            Add Post
+        </button>
+
+        <br><br>
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th>Title</th>
+                <th>User ID</th>
+                <th>Content</th>
+                <th>Action</th>
+            </tr>
+
+            <tbody id="table-content">
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

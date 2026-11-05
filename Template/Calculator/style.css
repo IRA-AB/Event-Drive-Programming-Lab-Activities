@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 0%, #2b2b2d 0%, #0a0a0a 65%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  padding: 24px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 360px;
+  background: #000;
+  border-radius: 44px;
+  padding: 22px 14px 28px;
+  border: 1px solid #2a2a2a;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 18px 14px 10px;
+  min-height: 120px;
+  overflow: hidden;
+}
+
+.previous-operand {
+  color: #7a7a7e;
+  font-size: 1.3rem;
+  font-weight: 300;
+  min-height: 1.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.current-operand {
+  color: #ffffff;
+  font-size: 3.6rem;
+  font-weight: 300;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  aspect-ratio: 1 / 1;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: #fff;
+  background: #333333;
+  transition: filter 0.12s ease, transform 0.06s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:active {
+  transform: scale(0.94);
+  filter: brightness(1.35);
+}
+
+.btn.number {
+  background: #333333;
+}
+
+.btn.function {
+  background: #a5a5a5;
+  color: #1a1a1a;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.btn.operator {
+  background: #ff9f0a;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.btn.equals {
+  background: #ff9f0a;
+  color: #fff;
+  font-size: 2.1rem;
+  grid-column: 4;
+  grid-row: 4 / span 2;
+  aspect-ratio: auto;
+  border-radius: 40px;
+}
+
+.btn.zero {
+  grid-column: span 2;
+  aspect-ratio: auto;
+  border-radius: 40px;
+  justify-content: flex-start;
+  padding-left: 28px;
+}
+
+@media (max-width: 400px) {
+  .current-operand {
+    font-size: 2.8rem;
+  }
+  .btn {
+    font-size: 1.4rem;
+  }
+}
